@@ -12,7 +12,7 @@ import org.mockito.stubbing.Stubber;
  * @author scott
  *
  */
-public interface I_Mockito {
+public interface DefaultMockitoCtx {
 
 	default <T> T any() {
 		return Mockito.any();
