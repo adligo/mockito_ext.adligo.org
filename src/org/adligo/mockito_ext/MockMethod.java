@@ -235,10 +235,16 @@ public class MockMethod<T> implements Answer<T> {
   }
 
   public MockMethod<T> push(T type) {
+    return push(type, 1);
+  }
+
+  public MockMethod<T> push(T type, int times) {
     if (types_ == null) {
       types_ = new Stack<T>();
     }
-    types_.push(type);
+    for (int i = 0; i < times; i++) {
+      types_.push(type); 
+    }
     return this;
   }
 

@@ -31,7 +31,7 @@ import org.mockito.stubbing.Stubber;
  *         </code>
  *         </pre>
  */
-public interface DefaultMockitoCtx {
+public interface MockitoMixin {
 
   default <T> T any() {
     return Mockito.any();
@@ -81,5 +81,9 @@ public interface DefaultMockitoCtx {
 
   default <T> T mock(Class<T> clazz) {
     return Mockito.mock(clazz);
+  }
+
+  default <T> OngoingStubbing<T> when(T methodCall) {
+    return Mockito.when(methodCall);
   }
 }
